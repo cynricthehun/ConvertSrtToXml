@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvertSRTToXml", "ConvertSRTToXml\ConvertSRTToXml.csproj", "{1580A467-F59A-42BD-8C7C-7974F832BF5D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1580A467-F59A-42BD-8C7C-7974F832BF5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1580A467-F59A-42BD-8C7C-7974F832BF5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1580A467-F59A-42BD-8C7C-7974F832BF5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1580A467-F59A-42BD-8C7C-7974F832BF5D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {418F003B-F719-4726-B41B-A81C075D9287}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,7 @@
+C:\Users\jmeyer7\projects\ConvertSRTToXml\ConvertSRTToXml\bin\Debug\ConvertSRTToXml.exe.config
+C:\Users\jmeyer7\projects\ConvertSRTToXml\ConvertSRTToXml\bin\Debug\ConvertSRTToXml.exe
+C:\Users\jmeyer7\projects\ConvertSRTToXml\ConvertSRTToXml\bin\Debug\ConvertSRTToXml.pdb
+C:\Users\jmeyer7\projects\ConvertSRTToXml\ConvertSRTToXml\obj\Debug\ConvertSRTToXml.csprojResolveAssemblyReference.cache
+C:\Users\jmeyer7\projects\ConvertSRTToXml\ConvertSRTToXml\obj\Debug\ConvertSRTToXml.csproj.CoreCompileInputs.cache
+C:\Users\jmeyer7\projects\ConvertSRTToXml\ConvertSRTToXml\obj\Debug\ConvertSRTToXml.exe
+C:\Users\jmeyer7\projects\ConvertSRTToXml\ConvertSRTToXml\obj\Debug\ConvertSRTToXml.pdb
