@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace ConvertSRTToXml
@@ -19,6 +20,18 @@ namespace ConvertSRTToXml
             {
                 file = Console.ReadLine();
                 return file;
+            }
+
+            string getFileName(string theFile)
+            {
+                string fileName = Path.GetFileNameWithoutExtension(theFile);
+                return fileName;
+            }
+
+            string getExecutingDirectory()
+            {
+                string DirectoryString = Directory.GetCurrentDirectory();
+                return DirectoryString;
             }
 
             string setupHeader()
@@ -61,6 +74,10 @@ namespace ConvertSRTToXml
                 string content = "";
                 string header1 = setupHeader();
                 string footer1 = setupFooter();
+
+                char oldChar = ',';
+                char newChar = '.';
+
                 List<string> newLines = new List<string>();
 
                 // Add Header to new array;
@@ -80,12 +97,17 @@ namespace ConvertSRTToXml
                             captionNumber = line[0].ToString();
                         }
                     }
+                    // Format Start and End Times
                     else if (line.Length > 0 && line[0].ToString() == "0")
                     {
                         string allCharacterLeftOfDash = line.Substring(0, line.IndexOf("-"));
                         startTime = "'" + allCharacterLeftOfDash.Trim() + "'";
+                        // Replace the , with a .
+                        startTime = startTime.Replace(oldChar, newChar);
                         string allCharacterRightOfArrow = line.Split('>').Last();
                         endTime = "'" + allCharacterRightOfArrow.Trim() + "'";
+                        // Replace the , with a .
+                        endTime = endTime.Replace(oldChar, newChar);
                     }
                     else if (line.Length == 0)
                     {
@@ -128,8 +150,14 @@ namespace ConvertSRTToXml
                 //Get Rando
                 int rando = randomNumber();
 
+                //Get the current directory
+                string directoryForPath = getExecutingDirectory();
+
+                //GetFileName
+                string fileNameForPath = getFileName(file);
+
                 //Write collection to new file.
-                System.IO.File.WriteAllLines(@"C:/ConvertedSrt" + DateTime.Now.Millisecond + rando.ToString() + ".xml", newLines);
+                System.IO.File.WriteAllLines(@directoryForPath + "/" + fileNameForPath + "" + DateTime.Now.Millisecond + ".xml", newLines);
 
                 Console.WriteLine("Press any key to exit.");
                 Console.ReadKey();
