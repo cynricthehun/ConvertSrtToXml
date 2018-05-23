@@ -11,10 +11,20 @@ namespace ConvertSRTToXml
         static void Main(string[] args)
         {
             string file;
-            Console.WriteLine("Welcome to the SRT File converter.");
-            Console.WriteLine("Please enter the file name and path to begin the process.");
-            string newFile = selectFile();
-            readFile(newFile);
+            bool still = false;
+            while (still == false)
+            {
+                Console.WriteLine("Welcome to the SRT File converter.");
+                Console.WriteLine("Please enter the file name and path to begin the process.");
+                string newFile = selectFile();
+                readFile(newFile);
+                Console.WriteLine("type 'y' to quit.");
+                var finished = Console.ReadLine();
+                if (finished == "y")
+                {
+                    still = true;
+                }
+            }
 
             string selectFile()
             {
@@ -37,6 +47,7 @@ namespace ConvertSRTToXml
             string setupHeader()
             {
                 string header =
+                    "﻿<?xml version='1.0' encoding='UTF - 8'?>\n" +
                     "<tt xmlns='http://www.w3.org/2006/04/ttaf1' xmlns:tts='http://www.w3.org/2006/04/ttaf1#styling' xml:lang='en'> \n" +
                     "<head> \n" +
                     "<styling> \n" +
@@ -158,9 +169,6 @@ namespace ConvertSRTToXml
 
                 //Write collection to new file.
                 System.IO.File.WriteAllLines(@directoryForPath + "/" + fileNameForPath + "" + DateTime.Now.Millisecond + ".xml", newLines);
-
-                Console.WriteLine("Press any key to exit.");
-                Console.ReadKey();
             }
         }
 
